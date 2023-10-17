@@ -2,7 +2,7 @@
 FROM amazoncorretto:17-alpine as corretto-jdk
 
 # required for strip-debug to work
-RUN apk add --no-cache binutils
+RUN apk add --no-cache binutils=2.40-r7
 
 # Build small JRE image
 RUN jlink \
@@ -13,7 +13,8 @@ RUN jlink \
          --compress=2 \
          --output /jre
 
-FROM alpine:latest
+FROM alpine:3.18.4
+
 ENV JAVA_HOME=/jre
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 

@@ -36,3 +36,4 @@ log/*
 bin/*
 !bin/*.sh
 JENKINS.md
+!/bin/.hadolint.yaml

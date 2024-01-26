@@ -2,7 +2,7 @@
 FROM amazoncorretto:17-alpine as corretto-jdk
 
 # required for strip-debug to work
-RUN apk add --no-cache binutils=2.40-r7
+RUN apk add --no-cache binutils
 
 # Build small JRE image
 RUN jlink \
